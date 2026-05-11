@@ -1,8 +1,8 @@
 // Arrays
 let pronombres = ["el", "nuestro", "tu"];
 let sustantivos = ["mapache", "oso", "pescado"];
-let adjetivos = ["verde", "grande", "retorcido"];
-let extensiones = [".com", ".net", ".es", ".io", ".us"];
+let adjetivos = ["burgues", "ingles", "propio", "internet"];
+let extensiones = ["com", "net", "es", "io", "us"];
 
 // Generador de nombres de dominio
 const generadorDeNombresDeDominio = (arrPronombres, arrSustantivos, arrAdjetivos, arrExtensiones) => {
@@ -10,7 +10,12 @@ const generadorDeNombresDeDominio = (arrPronombres, arrSustantivos, arrAdjetivos
     for (let sustantivo of arrSustantivos) {
       for (let adjetivo of arrAdjetivos) {
         for (let extension of arrExtensiones) {
-          console.log(pronombre + sustantivo + adjetivo + extension);
+          if (adjetivo.endsWith(extension)) {
+            let adjetivoSeparado = adjetivo.split("");
+            adjetivoSeparado.splice(adjetivo.length - extension.length, extension.length);
+            console.log(pronombre + sustantivo + adjetivoSeparado.join("") + "." + extension);
+          }
+          else console.log(pronombre + sustantivo + adjetivo + "." + extension);
         }
       }
     }
