@@ -36,11 +36,11 @@ const añadirALaLista = (boton, input, lista, array) => {
   boton.addEventListener("click", () => {
     // Se crea el li
     let liElement = document.createElement("li");
-    liElement.textContent = input.value;
+    liElement.textContent = input.value.toLowerCase();
     // Se añade el li
     lista.appendChild(liElement);
     // Se añade al array como cadena de texto
-    array.push(String(input.value));
+    array.push(String(input.value.toLowerCase()));
     // Se vacía el valor del input
     input.value = "";
   })
