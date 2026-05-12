@@ -3,3 +3,11 @@
 body{
     background: white;
 }
+
+/* Elementos de la lista */
+.elementoLista {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+}

@@ -1,26 +1,90 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="./assets/img/4geeks.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
 
-    <!-- Fontawesome is our recomended library for icons -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    
-    <ul id="miLista">
-      
-    </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generador de nombres de Dominio Interactivo</title>
 
-    <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
-    <script type="module" src="app.js"></script>
-  </body>
+  <!-- Bootstrap en HTML -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Fontawesome is our recomended library for icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+  <!-- Mi hoja de estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-secondary">
+
+  <!-- Contenedor Principal -->
+  <div class="container-fluid bg-secondary d-flex flex-column align-items-center gap-3">
+
+    <!-- Header -->
+    <div class="container-fluid d-flex flex-column align-items-center gap-3 py-3 bg-light text-secondary">
+      <h1 class="border-bottom border-secondary pb-3">Generador de Nombres de Dominio Interactivo</h1>
+      <p class="w-50 text-center fs-5 pb-2">¡Bienvenido! Este sitio web te permite obtener todas las posibilidades de nombres de
+        dominio en función de las palabras que introduzcas en las siguientes listas. Por favor, rellena las listas,
+        pulsa en el botón, y comprueba todas las opciones que te damos. ¡Tienes la posibilidad de eliminar las que
+        quieras pulsando en su casilla!</p>
+    </div>
+
+    <!-- Contenedor de listas -->
+    <div class="container-fluid d-flex justify-content-center mt-3 text-light">
+      <div class="container row d-flex gap-5">
+        <!-- Pronombres -->
+        <div class="col d-flex flex-column gap-3 align-items-center">
+          <h2>Pronombres</h2>
+          <input type="text" id="inputPronombres">
+          <button type="button" id="botonPronombres" class="btn btn-outline-light">Añadir</button>
+          <ul id="listaPronombres"></ul>
+        </div>
+        <!-- Sustantivos -->
+        <div class="col d-flex flex-column gap-3 align-items-center">
+          <h2>Sustantivos</h2>
+          <input type="text" id="inputSustantivos">
+          <button type="button" id="botonSustantivos" class="btn btn-outline-light">Añadir</button>
+          <ul id="listaSustantivos"></ul>
+        </div>
+        <!-- Adjetivos -->
+        <div class="col d-flex flex-column gap-3 align-items-center">
+          <h2>Adjetivos</h2>
+          <input type="text" id="inputAdjetivos">
+          <button type="button" id="botonAdjetivos" class="btn btn-outline-light">Añadir</button>
+          <ul id="listaAdjetivos"></ul>
+        </div>
+        <!-- Extensiones -->
+        <div class="col d-flex flex-column gap-3 align-items-center">
+          <h2>Extensiones</h2>
+          <ul>
+            <li>.com</li>
+            <li>.net</li>
+            <li>.es</li>
+            <li>.io</li>
+            <li>.us</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botón generador de Nombres de Dominio -->
+    <button type="button" id="botonGenerador" class="btn btn-outline-light">Generar Nombres de Dominio</button>
+    <button type="button" id="reset" class="btn btn-outline-light">Reset</button>
+
+    <span class="border-bottom text-secondary">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
+
+    <!-- Lista de Nombres de Dominio generados -->
+    <ul id="miLista" class="miLista text-light"></ul>
+
+  </div>
+
+  <!-- Mi Script -->
+  <script type="module" src="app.js"></script>
+  <!-- Script de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
