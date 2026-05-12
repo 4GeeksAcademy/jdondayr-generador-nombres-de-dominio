@@ -34,6 +34,7 @@ let miLista = document.querySelector("#miLista");
 // Pulsar botón de Añadir a una lista
 const añadirALaLista = (boton, input, lista, array) => {
   boton.addEventListener("click", () => {
+    if (input.value === "") return // Comprueba que no haya inputs vacíos
     // Se crea el li
     let liElement = document.createElement("li");
     liElement.textContent = input.value.toLowerCase();
