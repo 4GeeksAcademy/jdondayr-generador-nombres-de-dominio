@@ -61,7 +61,7 @@ botonGenerador.addEventListener("click", () => {
             let checkBox = document.createElement("input");
             checkBox.type = "checkbox";
             // Elimina el elemento si se marca la Check Box
-            checkBox.addEventListener("change", () => miLista.removeChild(liElement))
+            checkBox.addEventListener("change", () => listaNombresDominio.removeChild(liElement))
 
             // Creo li y le añado clase elementoLista
             let liElement = document.createElement("li");
