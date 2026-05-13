@@ -26,13 +26,13 @@ let botonGenerador = document.querySelector("#botonGenerador");
 let botonReset = document.querySelector("#reset");
 
 // Lista Ul
-let miLista = document.querySelector("#miLista");
+let listaNombresDominio = document.querySelector("#listaNombresDominio");
 
 
 //------------------------------ ACCIONES ---------------------------------------------------------
 
 // Pulsar botón de Añadir a una lista
-const añadirALaLista = (boton, input, lista, array) => {
+const anadirALaLista = (boton, input, lista, array) => {
   boton.addEventListener("click", () => {
     if (input.value === "") return // Comprueba que no haya inputs vacíos
     // Se crea el li
@@ -47,9 +47,9 @@ const añadirALaLista = (boton, input, lista, array) => {
   })
 }
 // Ejecuto la función para cada una de los botones, inputs, listas y arrays
-añadirALaLista(botonPronombres, inputPronombres, listaPronombres, pronombres);
-añadirALaLista(botonAdjetivos, inputAdjetivos, listaAdjetivos, adjetivos);
-añadirALaLista(botonSustantivos, inputSustantivos,listaSustantivos, sustantivos);
+anadirALaLista(botonPronombres, inputPronombres, listaPronombres, pronombres);
+anadirALaLista(botonAdjetivos, inputAdjetivos, listaAdjetivos, adjetivos);
+anadirALaLista(botonSustantivos, inputSustantivos,listaSustantivos, sustantivos);
 
 // Pulsar botón generador de nombres de dominio
 botonGenerador.addEventListener("click", () => {
@@ -76,7 +76,7 @@ botonGenerador.addEventListener("click", () => {
             
             // Añado ambos elementos
             liElement.appendChild(checkBox);
-            miLista.appendChild(liElement);
+            listaNombresDominio.appendChild(liElement);
           }
         }
       }
@@ -85,7 +85,7 @@ botonGenerador.addEventListener("click", () => {
 
 // Botón Reset que vacía todo
 botonReset.addEventListener("click", () => {
-  miLista.textContent = "";
+  listaNombresDominio.textContent = "";
   listaPronombres.textContent = ""; inputPronombres.value = "";
   listaAdjetivos.textContent = ""; inputAdjetivos.value = "";
   listaSustantivos.textContent = ""; inputSustantivos.value = "";
